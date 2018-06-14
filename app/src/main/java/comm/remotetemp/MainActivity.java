@@ -70,12 +70,13 @@ public class MainActivity extends AppCompatActivity implements OnReceiveUpdates 
 
     @Override
     public void updateReceived(final double temperature) {
+        Toast.makeText(getApplicationContext(), "temp", Toast.LENGTH_SHORT).show();
         handler.post(new Runnable() {
             @Override
             public void run() {
                 String temp = String.valueOf(temperature) + " °C";
                 stateConnection.setText(temp);
-                Toast.makeText(getApplicationContext(), "temp", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
